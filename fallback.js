@@ -68,7 +68,7 @@
 
     if (routeInfo.kind === "join" && routeInfo.code) {
       lead.textContent = device === "android"
-        ? "This invite opens in Stride League. Copy the code, get the app, then paste it to join."
+        ? "This invite opens in Stride League. Copy the code, install the app, then paste it to join."
         : "This invite opens in Stride League. Copy the code, then paste it after you install the app.";
       codeValue.textContent = routeInfo.code;
       codeBlock.hidden = false;
@@ -81,20 +81,20 @@
       lead.textContent = "This link finishes signing in. Get Stride League, then start sign-in again from the app.";
     } else if (routeInfo.kind === "race") {
       lead.textContent = routeInfo.id
-        ? "This link opens a race in Stride League. Get the app, then open the link again."
-        : "This race link is missing an id. Ask your friend to send it again.";
+        ? "This link opens a race in Stride League. Install the app, then open the link again."
+        : "This race link is missing an ID. Ask your friend to send it again.";
     } else {
       title.textContent = "That page isn’t here";
       document.title = "Page not found · Stride League";
-      lead.textContent = "The link doesn’t match a Stride League page. You can still get the app.";
+      lead.textContent = "The link doesn’t match a Stride League page. You can still get Stride League.";
     }
 
-    if (storeUrl) {
-      note.textContent = "Get Stride League on " + storeName + ", then open this link again from your phone.";
-    } else if (routeInfo.kind === "missing") {
-      note.textContent = "Coming soon to " + storeName + ".";
+    if (storeUrl && routeInfo.kind !== "join") {
+      note.hidden = false;
+      note.textContent = "Open this link again from your phone after Stride League is installed.";
     } else {
-      note.textContent = "Get Stride League. Coming soon to " + storeName + ".";
+      note.hidden = true;
+      note.textContent = "";
     }
 
     storeSlot.replaceChildren(buildStoreControl(storeUrl, storeName));
@@ -137,11 +137,14 @@
     copyStatus.textContent = "";
     writeClipboard(code).then(function () {
       copyButton.textContent = "Copied";
-      copyStatus.textContent = "Invite code copied.";
+      copyButton.classList.add("is-copied");
       window.setTimeout(function () {
         copyButton.textContent = "Copy invite code";
+        copyButton.classList.remove("is-copied");
       }, 2000);
     }).catch(function () {
+      copyButton.textContent = "Copy invite code";
+      copyButton.classList.remove("is-copied");
       copyStatus.textContent = "Couldn’t copy automatically. Select the code and copy it.";
     });
   }

@@ -48,13 +48,43 @@ In the iOS app, the associated domains entitlement should include `applinks:stri
 
 The fallback page does not try a custom URL scheme. It shows a store button. Join links also show the code in large type with a Copy button, so it can be pasted after install. An empty store URL shows Coming soon.
 
-After Pages is live, check the association file:
+## Apple association file
+
+Apple requires `https://strideleague.me/.well-known/apple-app-site-association` to return HTTP 200, with `Content-Type: application/json`, and with no redirect.
+
+GitHub Pages cannot do that. Checked on 1 Oct 2026 against a live GitHub Pages host (`server: GitHub.com`):
+
+| URL | Result |
+| --- | --- |
+| `https://bitrequest.github.io/apple-app-site-association` | `200`, no `Location`, `content-type: application/octet-stream` |
+| `https://bitrequest.github.io/.well-known/apple-app-site-association.json` | `200`, `content-type: application/json; charset=utf-8` |
+| `https://bitrequest.github.io/.well-known/assetlinks.json` | `200`, `content-type: application/json; charset=utf-8` |
+
+The extensionless file is the one Apple requests. Pages serves it as `application/octet-stream`. A `.json` name is `application/json`, but Apple will not look for that name. Serving it from a folder so the URL redirects to add a slash also fails Apple’s check.
+
+This repo cannot be checked at the real URL yet:
+
+- GitHub Pages is not enabled (`GET /repos/Koffeekinggamer/strideleague-site/pages` is 404). `https://koffeekinggamer.github.io/strideleague-site/.well-known/apple-app-site-association` is GitHub’s own 404 page.
+- `strideleague.me` does not point at GitHub Pages. It resolves to `15.197.148.33` and `3.33.130.190`, and HTTPS to the association file fails the TLS handshake.
+
+`.well-known/assetlinks.json` is fine on Pages because of the `.json` extension.
+
+### Workaround
+
+Put Cloudflare in front of GitHub Pages and set the header there. Pages still hosts the site.
+
+1. Enable Pages on `main` / root, with the custom domain `strideleague.me`, and turn on HTTPS.
+2. Add the domain to Cloudflare. Use the GitHub Pages A and AAAA records above, and the `www` CNAME, with the proxy on.
+3. Set SSL/TLS to Full (strict). Do not redirect the apex to `www`, or the reverse, on this path.
+4. Add a response-header transform rule: if the URI path is `/.well-known/apple-app-site-association`, set `Content-Type` to `application/json`.
+
+Then confirm there is still no redirect:
 
 ```bash
-curl -I https://strideleague.me/.well-known/apple-app-site-association
+curl -sI https://strideleague.me/.well-known/apple-app-site-association
 ```
 
-Apple expects `Content-Type: application/json` and no redirect.
+You want `HTTP/2 200`, no `location` header, and `content-type: application/json`.
 
 ## Supabase
 

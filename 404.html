@@ -35,8 +35,8 @@
     <div id="code-block" class="code-block" hidden>
       <p class="code-label" id="code-label">Invite code</p>
       <p class="code-value" id="code-value"></p>
-      <button type="button" class="copy-button" id="copy-button">Copy invite code</button>
-      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      <button type="button" class="copy-button" id="copy-button" aria-live="polite">Copy invite code</button>
+      <p class="copy-status" id="copy-status" role="status"></p>
     </div>
 
     <div class="store-slot" id="store-slot">
@@ -45,7 +45,7 @@
         <span class="store-badge-name">to the App Store</span>
       </p>
     </div>
-    <p class="fine-print" id="fallback-note">Get Stride League, then open this link again from your phone.</p>
+    <p class="fine-print" id="fallback-note" hidden></p>
     <noscript>
       <p class="fine-print">JavaScript is off, so an invite code can’t be filled in here. The code is the last part of the link.</p>
     </noscript>

@@ -1,0 +1,30 @@
+# Static site. No build step. Netlify publishes this directory as-is.
+[build]
+  publish = "."
+
+# Rewrites, not redirects. The browser stays on the original URL.
+# Status 200 serves 404.html at that URL. There is no 3xx.
+[[redirects]]
+  from = "/auth/callback"
+  to = "/404.html"
+  status = 200
+
+[[redirects]]
+  from = "/auth/callback/"
+  to = "/404.html"
+  status = 200
+
+[[redirects]]
+  from = "/join/*"
+  to = "/404.html"
+  status = 200
+
+[[redirects]]
+  from = "/j/*"
+  to = "/404.html"
+  status = 200
+
+[[redirects]]
+  from = "/race/*"
+  to = "/404.html"
+  status = 200

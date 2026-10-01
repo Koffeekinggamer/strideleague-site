@@ -1,6 +1,7 @@
-/* Universal-link fallback for GitHub Pages.
-   Unknown paths are served as this page, with the original URL intact.
-   Shows a store button only. Does not open custom URL schemes or redirect. */
+/* Universal-link fallback.
+   Netlify rewrites /auth/callback, /join/*, /j/*, and /race/* to this page
+   and leaves the original URL in place. Shows a store button only.
+   Does not open custom URL schemes or redirect. */
 (function () {
   var title = document.getElementById("fallback-title");
   var lead = document.getElementById("fallback-lead");

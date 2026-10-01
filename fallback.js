@@ -37,7 +37,7 @@
       return { kind: "join", code: cleanToken(parts[1]) };
     }
     if (head === "race") {
-      return { kind: "race", id: cleanToken(parts[1]) };
+      return { kind: "race", id: cleanRaceId(parts[1]) };
     }
     return { kind: "missing" };
   }
@@ -55,12 +55,20 @@
     return value;
   }
 
+  // Race ids can be UUIDs, so hyphens are allowed here (not in invite codes).
+  function cleanRaceId(value) {
+    if (!value || !/^[A-Za-z0-9-]{1,64}$/.test(value)) return "";
+    return value;
+  }
+
   function render(routeInfo, device) {
     var storeKind = device === "android" ? "play" : "app";
     var storeUrl = strideStoreUrl(storeKind);
     var storeName = storeKind === "play" ? "Google Play" : "the App Store";
 
-    if (device === "android") {
+    if (routeInfo.kind === "race") {
+      title.textContent = "Open this race in Stride League";
+    } else if (device === "android") {
       title.textContent = "Get Stride League";
     } else {
       title.textContent = "Open Stride League on your iPhone";
@@ -82,12 +90,30 @@
       lead.textContent = "This link finishes signing in. Get Stride League, then start sign-in again from the app.";
     } else if (routeInfo.kind === "race") {
       lead.textContent = routeInfo.id
-        ? "This link opens a race in Stride League. Install the app, then open the link again."
+        ? "Install Stride League to see this race in the app."
         : "This race link is missing an ID. Ask your friend to send it again.";
     } else {
       title.textContent = "That page isn’t here";
       document.title = "Page not found · Stride League";
       lead.textContent = "The link doesn’t match a Stride League page. You can still get Stride League.";
+    }
+
+    if (routeInfo.kind === "race") {
+      // Race links show both stores, whatever the device.
+      var appUrl = strideStoreUrl("app");
+      var playUrl = strideStoreUrl("play");
+      if (appUrl || playUrl) {
+        note.hidden = false;
+        note.textContent = "Open this link again from your phone after Stride League is installed.";
+      } else {
+        note.hidden = true;
+        note.textContent = "";
+      }
+      storeSlot.replaceChildren(
+        buildStoreLine(appUrl, "Download on the App Store", "listing coming soon."),
+        buildStoreLine(playUrl, "Get it on Google Play", "listing coming soon.")
+      );
+      return;
     }
 
     if (storeUrl && routeInfo.kind !== "join") {
@@ -99,6 +125,27 @@
     }
 
     storeSlot.replaceChildren(buildStoreControl(storeUrl, storeName));
+  }
+
+  /* One store line for the race page. With a URL it is a link.
+     Without one it is plain text that says the listing is coming soon. */
+  function buildStoreLine(url, label, pendingText) {
+    var line = document.createElement("p");
+    line.className = "store-line";
+    if (url) {
+      var link = document.createElement("a");
+      link.href = url;
+      var strong = document.createElement("strong");
+      strong.textContent = label;
+      link.appendChild(strong);
+      line.appendChild(link);
+    } else {
+      var label_ = document.createElement("strong");
+      label_.textContent = label;
+      line.appendChild(label_);
+      line.appendChild(document.createTextNode(" \u2014 " + pendingText));
+    }
+    return line;
   }
 
   function buildStoreControl(url, storeName) {

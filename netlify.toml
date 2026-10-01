@@ -20,6 +20,11 @@
   status = 200
 
 [[redirects]]
+  from = "/i/*"
+  to = "/404.html"
+  status = 200
+
+[[redirects]]
   from = "/j/*"
   to = "/404.html"
   status = 200

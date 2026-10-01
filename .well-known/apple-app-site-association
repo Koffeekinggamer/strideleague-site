@@ -8,6 +8,7 @@
           "/auth/callback",
           "/auth/callback/*",
           "/join/*",
+          "/i/*",
           "/j/*",
           "/race/*"
         ]

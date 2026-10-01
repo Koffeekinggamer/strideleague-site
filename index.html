@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stride League — Step races for friends</title>
+  <meta name="description" content="Stride League is a small step-count race for friends. Coming soon to the App Store.">
+  <meta name="theme-color" content="#f3faf6">
+  <link rel="canonical" href="https://strideleague.me/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="wrap site-header">
+    <a class="wordmark" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#e5f7ee"/>
+        <rect x="6" y="18" width="4" height="8" rx="1.5" fill="#227745"/>
+        <rect x="14" y="12" width="4" height="14" rx="1.5" fill="#227745"/>
+        <rect x="22" y="6" width="4" height="20" rx="1.5" fill="#227745"/>
+      </svg>
+      Stride League
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">For a few friends</p>
+          <h1 id="hero-title">Race friends on steps.</h1>
+          <p class="lead">Stride League is a small step-count race for the people you actually walk with. Send a link, see who’s ahead, and finish together.</p>
+          <p class="store-badge" id="store-badge">
+            <span class="store-badge-kicker">Coming soon</span>
+            <span class="store-badge-name">to the App Store</span>
+          </p>
+          <p class="quiet">iPhone first. Android later.</p>
+        </div>
+
+        <aside class="card" aria-labelledby="example-title">
+          <h2 id="example-title">Example standings</h2>
+          <p class="sample-note">Sample numbers, for illustration.</p>
+          <ol class="standings">
+            <li>
+              <div class="standing-row">
+                <span class="who">Alex</span>
+                <span class="steps">42,180</span>
+              </div>
+              <div class="track" aria-hidden="true"><div class="fill" style="width: 100%"></div></div>
+            </li>
+            <li>
+              <div class="standing-row">
+                <span class="who">Jordan</span>
+                <span class="steps">38,902</span>
+              </div>
+              <div class="track" aria-hidden="true"><div class="fill" style="width: 92%"></div></div>
+            </li>
+            <li>
+              <div class="standing-row">
+                <span class="who">Sam</span>
+                <span class="steps">31,440</span>
+              </div>
+              <div class="track" aria-hidden="true"><div class="fill" style="width: 74%"></div></div>
+            </li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="how-title">
+      <h2 id="how-title">How a race goes</h2>
+      <ol class="steps">
+        <li>
+          <span class="num" aria-hidden="true">1</span>
+          <div>
+            <h3>Make a race</h3>
+            <p>Pick a short race and a handful of friends. That’s the whole group.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">2</span>
+          <div>
+            <h3>Send the link</h3>
+            <p>If they have Stride League, the link opens the app. If they don’t, it sends them to get it.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">3</span>
+          <div>
+            <h3>Walk</h3>
+            <p>Steps come from Apple Health and update the standings. Then you just go for a walk.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap section">
+      <div class="promise">
+        <h2>Your steps stay in the race</h2>
+        <p>We read step counts to show standings. We don’t sell them, and we don’t use them for ads.</p>
+        <a href="/privacy.html">Read the privacy policy</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <div class="footer-row">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:nckoffeeking@gmail.com">nckoffeeking@gmail.com</a>
+    </div>
+    <p class="footer-note">Stride League</p>
+  </footer>
+
+  <script src="/config.js"></script>
+  <script>
+    (function () {
+      if (typeof strideStoreUrl !== "function") return;
+      var url = strideStoreUrl("app");
+      var badge = document.getElementById("store-badge");
+      if (!badge || !url) return;
+      var link = document.createElement("a");
+      link.className = "store-badge";
+      link.id = "store-badge";
+      link.href = url;
+      var kicker = document.createElement("span");
+      kicker.className = "store-badge-kicker";
+      kicker.textContent = "Download";
+      var name = document.createElement("span");
+      name.className = "store-badge-name";
+      name.textContent = "on the App Store";
+      link.appendChild(kicker);
+      link.appendChild(name);
+      badge.replaceWith(link);
+    })();
+  </script>
+</body>
+</html>

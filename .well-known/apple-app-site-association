@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.koffeekinggamer.strideleague",
+        "paths": [
+          "/auth/callback",
+          "/auth/callback/*",
+          "/join/*",
+          "/j/*",
+          "/race/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "TEAMID.com.koffeekinggamer.strideleague"
+    ]
+  }
+}

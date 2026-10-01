@@ -335,6 +335,34 @@ a.store-badge:hover {
   font-weight: 650;
 }
 
+.faq {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+
+.faq-item h3 {
+  margin: 2px 0 6px;
+  color: var(--brand);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.faq-item p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.store-slot .store-line {
+  margin: 0 0 8px;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 20px 0 36px;
@@ -509,6 +537,7 @@ a.store-badge:hover {
   .copy-button,
   .card,
   .steps li,
+  .faq-item,
   .promise {
     border: 1px solid ButtonText;
   }

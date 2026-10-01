@@ -1,5 +1,5 @@
 /* Universal-link fallback.
-   Netlify rewrites /auth/callback, /join/*, /j/*, and /race/* to this page
+   Netlify rewrites /auth/callback, /join/*, /i/*, /j/*, and /race/* to this page
    and leaves the original URL in place. Shows a store button only.
    Does not open custom URL schemes or redirect. */
 (function () {
@@ -33,7 +33,7 @@
     if (head === "auth" && second === "callback") {
       return { kind: "auth" };
     }
-    if (head === "join" || head === "j") {
+    if (head === "join" || head === "j" || head === "i") {
       return { kind: "join", code: cleanToken(parts[1]) };
     }
     if (head === "race") {

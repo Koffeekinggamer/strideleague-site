@@ -98,6 +98,23 @@ a:hover {
   text-decoration: none;
 }
 
+/* Narrow phones: keep the wordmark on one line and let the
+   three nav links drop below it instead of running off screen. */
+@media (max-width: 420px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
+  .wordmark {
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    margin-left: -12px;
+  }
+}
+
 .wordmark svg {
   width: 28px;
   height: 28px;
@@ -359,6 +376,17 @@ a.store-badge:hover {
   max-width: 40rem;
 }
 
+.faq-item p + p {
+  margin-top: 8px;
+}
+
+.faq-item a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 650;
+}
+
 .store-slot .store-line {
   margin: 0 0 8px;
 }
@@ -410,9 +438,14 @@ a.store-badge:hover {
   color: var(--ink);
 }
 
-.prose ul {
+.prose ul,
+.prose ol {
   margin: 0.4em 0 0;
   padding-left: 1.2em;
+}
+
+.prose li > ul {
+  margin-top: 0.35em;
 }
 
 .prose li + li {

@@ -41,7 +41,7 @@ Any other missing path still uses `404.html` as Netlify’s 404 page. The script
 
 ## Association files
 
-`_headers` sets `Content-Type: application/json` for:
+`_headers` and `netlify.toml` (`[[headers]]`) both set `Content-Type: application/json` for:
 
 - `/.well-known/apple-app-site-association`
 - `/.well-known/assetlinks.json`
@@ -58,11 +58,10 @@ You want `HTTP/2 200`, no `location` header, and `content-type: application/json
 
 ## Fill in when they exist
 
-The App Store id and Apple Team ID are not created yet. Leave the placeholders until they are.
+The Apple Team ID is set (`FA99PQ835U`, so the appID is `FA99PQ835U.com.koffeekinggamer.strideleague` in `.well-known/apple-app-site-association`, applinks `appID` and webcredentials). The App Store id is not created yet. Leave the remaining placeholders until they exist.
 
 | What | Where | Placeholder |
 | --- | --- | --- |
-| Apple Team ID | `.well-known/apple-app-site-association` | `TEAMID` in `TEAMID.com.koffeekinggamer.strideleague` (applinks `appID` and webcredentials). Two occurrences. |
 | App Store URL | `config.js` → `APP_STORE_URL` | `""` (empty shows **Coming soon** and is not a link). Use the full `https://apps.apple.com/...` URL. |
 | Play Store URL | `config.js` → `PLAY_STORE_URL` | `""` (same Coming soon behavior on Android). |
 | Play signing certificate | `.well-known/assetlinks.json` | `SHA256_PLACEHOLDER` in `sha256_cert_fingerprints`. |
@@ -94,7 +93,7 @@ That path is listed in the Apple app site association file, so a finished sign-i
 | `404.html`, `fallback.js` | Universal-link fallback |
 | `config.js` | `APP_STORE_URL` and `PLAY_STORE_URL` |
 | `site.css`, `favicon.svg` | Styles and icon |
-| `netlify.toml` | Publish directory and link rewrites |
+| `netlify.toml` | Publish directory, link rewrites, and JSON content type for the association files |
 | `_headers` | JSON content type for the association files |
 | `.well-known/apple-app-site-association` | iOS universal links and webcredentials |
 | `.well-known/assetlinks.json` | Android App Links |

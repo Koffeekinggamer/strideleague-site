@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "TEAMID.com.koffeekinggamer.strideleague",
+        "appID": "FA99PQ835U.com.koffeekinggamer.strideleague",
         "paths": [
           "/auth/callback",
           "/auth/callback/*",
@@ -17,7 +17,7 @@
   },
   "webcredentials": {
     "apps": [
-      "TEAMID.com.koffeekinggamer.strideleague"
+      "FA99PQ835U.com.koffeekinggamer.strideleague"
     ]
   }
 }

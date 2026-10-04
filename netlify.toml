@@ -41,3 +41,16 @@
   from = "/help/step-sources"
   to = "/help/step-sources/index.html"
   status = 200
+
+# Association files. Served as JSON with no redirect. No redirect rule
+# above matches /.well-known/*, so Netlify serves the static files as-is.
+# _headers sets the same values; this keeps netlify.toml self-contained.
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"

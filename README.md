@@ -90,6 +90,7 @@ That path is listed in the Apple app site association file, so a finished sign-i
 | --- | --- |
 | `index.html` | Landing page |
 | `privacy.html`, `terms.html` | Privacy policy and terms |
+| `help/step-sources/index.html` | Step source help. The app’s “How to connect your watch” link and sync-stall fallback open `https://strideleague.me/help/step-sources`. |
 | `404.html`, `fallback.js` | Universal-link fallback |
 | `config.js` | `APP_STORE_URL` and `PLAY_STORE_URL` |
 | `site.css`, `favicon.svg` | Styles and icon |

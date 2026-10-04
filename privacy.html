@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy · Stride League</title>
-  <meta name="description" content="How Stride League handles your account, steps, and Plus.">
+  <meta name="description" content="How Stride League handles your account, steps, step source, and Plus.">
   <meta name="theme-color" content="#f3faf6">
   <link rel="canonical" href="https://strideleague.me/privacy.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -24,6 +24,7 @@
       Stride League
     </a>
     <nav class="site-nav" aria-label="Site">
+      <a href="/help/step-sources/">Help</a>
       <a href="/privacy.html" aria-current="page">Privacy</a>
       <a href="/terms.html">Terms</a>
     </nav>
@@ -37,9 +38,31 @@
     <p>You can sign in with your email, with Apple, or with Google. We store the email address on your account and the sign-in identifier Apple or Google gives us. We never receive your Apple or Google password.</p>
 
     <h2>Steps</h2>
-    <p>On iPhone, Stride League reads steps from Apple Health. On Android, it reads steps from Health Connect. We use those steps only to show race standings.</p>
+    <p>On iPhone, Stride League reads steps from Apple Health. On Android, it reads steps from Health Connect. We use those steps only to show your own totals and race standings.</p>
+    <p>The only health data we read is your daily step total, from the one step source you choose. On iPhone, that’s iPhone, Apple Watch, or both together. On Android, it’s this phone, or Samsung Health for a Samsung Galaxy Watch. You have one step source at a time. Only steps recorded by the source you choose count.</p>
+    <p>To tell sources apart, the app also reads which app or device recorded your steps. It may look at recent step records on your phone to do this, but those records stay on your phone.</p>
+    <p>With each daily step total, we upload:</p>
+    <ul>
+      <li>The source label, which names the app or device that recorded the steps. On Android, this includes the recording app’s package name.</li>
+      <li>Your phone’s model name. This is the phone, not your watch.</li>
+      <li>The time of the sync.</li>
+    </ul>
+    <p>Your source label is shared with the race and shows on the standings. Your phone model is visible only to you and the Stride League team, and we use it only for fair-play checks. Other people in your races can’t see it.</p>
+    <p>Stride League doesn’t connect to your accounts with other fitness companies. It reads only what you allow through Apple Health or Health Connect. We don’t read heart rate, sleep, location, workouts, or any other health data, and we never write anything to Apple Health or Health Connect.</p>
     <p>We don’t sell your information. We don’t use steps or other Health data for advertising.</p>
     <p>We don’t share Health data with third parties beyond our backend (Supabase) and subscription processing (Apple, Google, and RevenueCat).</p>
+
+    <h2>Turning off Health access</h2>
+    <p>You can stop Stride League from reading steps at any time. The app still opens, and your totals stay empty instead of showing zero.</p>
+    <ul>
+      <li>On iPhone, open the Health app, tap your picture, tap Apps, tap Stride League, and turn off Steps.</li>
+      <li>On Android, open Health Connect, tap App permissions, tap Stride League, and turn off Steps. On Android 14 and later, Health Connect is in Settings.</li>
+    </ul>
+    <p>To turn access back on, follow the same steps and turn Steps on.</p>
+    <p><a href="/help/step-sources/">Get help with step sources</a></p>
+
+    <h2>Fair play</h2>
+    <p>If a day has more than 60,000 steps, the person who created that race sees a fair-play flag for that day. Other people in the race don’t see it. A high day isn’t an automatic ban or removal from a race. A single sync of more than 200,000 steps for one day is rejected.</p>
 
     <h2>Races</h2>
     <p>A race holds up to 5 people on the free tier, or up to 100 with Stride League Plus. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
@@ -68,6 +91,7 @@
 
   <footer class="wrap site-footer">
     <div class="footer-row">
+      <a href="/help/step-sources/">Help</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="mailto:nckoffeeking@gmail.com">nckoffeeking@gmail.com</a>

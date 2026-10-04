@@ -33,3 +33,11 @@
   from = "/race/*"
   to = "/404.html"
   status = 200
+
+# Help page. The app links to /help/step-sources (no trailing slash).
+# The page lives at help/step-sources/index.html. Static files win over
+# this rule, so it only matters if Netlify does not resolve the folder.
+[[redirects]]
+  from = "/help/step-sources"
+  to = "/help/step-sources/index.html"
+  status = 200

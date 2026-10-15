@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy · Stride League</title>
-  <meta name="description" content="How Stride League handles your account, steps, step source, and Plus.">
+  <meta name="description" content="How Stride League handles your account, steps, step source, race alerts, crash reports, and Plus.">
   <meta name="theme-color" content="#f3faf6">
   <link rel="canonical" href="https://strideleague.me/privacy.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -50,7 +50,7 @@
     <p>Your source label is shared with the race and shows on the standings. Your phone model is visible only to you and the Stride League team, and we use it only for fair-play checks. Other people in your races can’t see it.</p>
     <p>Stride League doesn’t connect to your accounts with other fitness companies. It reads only what you allow through Apple Health or Health Connect. We don’t read heart rate, sleep, location, workouts, or any other health data, and we never write anything to Apple Health or Health Connect.</p>
     <p>We don’t sell your information. We don’t use steps or other Health data for advertising.</p>
-    <p>We don’t share Health data with third parties beyond our backend (Supabase) and subscription processing (Apple, Google, and RevenueCat).</p>
+    <p>We don’t share Health data with third parties beyond our backend (Supabase) and subscription processing (Apple, Google, and RevenueCat). Crash reports sent to Sentry don’t include Health data.</p>
 
     <h2>Turning off Health access</h2>
     <p>You can stop Stride League from reading steps at any time. The app still opens, and your totals stay empty instead of showing zero.</p>
@@ -67,9 +67,24 @@
     <h2>Races</h2>
     <p>A race holds up to 5 people on the free tier, or up to 100 with Stride League Plus. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
 
-    <h2>Home-screen widget (Android)</h2>
-    <p>On Android, the home-screen widget shows your steps today and your standing in an active race. To do that, the app keeps a small snapshot in Android shared preferences on your phone. The snapshot is not uploaded for the widget.</p>
+    <h2>Race alerts</h2>
+    <p>Race alerts are optional. If you turn them on, we store a push token for your phone. A push token is an address Apple or Google gives us so we can send alerts to your device. We use it only to send race alerts, like the alert when a race locks and who won. We don’t use it for ads or marketing.</p>
+    <p>We don’t send alerts between 9 PM and 8 AM, and we don’t send daily step reminders.</p>
+    <p><a href="#turn-on-alerts">How to turn race alerts on or off</a></p>
+
+    <h2>Crash reports</h2>
+    <p>If the app crashes, it sends a crash report to Sentry, the service we use to find and fix bugs. A crash report includes technical details about the crash, like the app version and what the app was doing. Crash reports don’t include your steps, your name, or your email. Sentry keeps crash reports for about 90 days.</p>
+
+    <h2>Home-screen widget</h2>
+    <p>On Android, the home-screen widget shows your steps today and your standing in an active race. To do that, the app keeps a small snapshot in Android shared preferences on your phone. Widget data stays on your phone and is not uploaded.</p>
     <p>Signing out or deleting your account clears the snapshot. Removing the widget from your home screen does not clear it.</p>
+
+    <h2 id="turn-on-alerts">Turning race alerts on or off</h2>
+    <ul>
+      <li>If you tapped Not Now, open the You tab in Stride League and tap Race updates.</li>
+      <li>If you said no when your phone asked, on iPhone open Settings, tap Apps, tap Stride League, tap Notifications, and turn on Allow Notifications. On Android, open Settings, tap Apps, tap Stride League, tap Notifications, and turn them on.</li>
+    </ul>
+    <p>To turn alerts off, follow the same steps and turn them off.</p>
 
     <h2>Reports and blocks</h2>
     <p>You can report or block another person in the app. We store the report so we can review it. A block keeps that person out of your races.</p>

@@ -63,6 +63,7 @@ The Apple Team ID is set (`FA99PQ835U`, so the appID is `FA99PQ835U.com.koffeeki
 | What | Where | Placeholder |
 | --- | --- | --- |
 | App Store URL | `config.js` → `APP_STORE_URL` | `""` (empty shows **Coming soon** and is not a link). Use the full `https://apps.apple.com/...` URL. |
+| App Store released | `config.js` → `APP_STORE_RELEASED` | `false`. While false, the App Store badge stays **Coming soon** even though `APP_STORE_URL` is set (the listing 404s before release). Set `true` on release day. |
 | Play Store URL | `config.js` → `PLAY_STORE_URL` | `""` (same Coming soon behavior on Android). |
 | Play signing certificate | `.well-known/assetlinks.json` | `SHA256_PLACEHOLDER` in `sha256_cert_fingerprints`. |
 

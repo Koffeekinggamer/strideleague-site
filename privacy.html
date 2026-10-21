@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy · Stride League</title>
-  <meta name="description" content="How Stride League handles your account, steps, step source, and Plus.">
+  <meta name="description" content="How Stride League handles your account, steps, step source, notifications, and crash reports.">
   <meta name="theme-color" content="#f3faf6">
   <link rel="canonical" href="https://strideleague.me/privacy.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,9 +33,14 @@
   <main id="content" class="wrap sheet prose">
     <h1>Privacy</h1>
     <p>Stride League is a race on steps for a few friends. This page says what we collect, why we collect it, and who else handles it.</p>
+    <p>Last updated October 21, 2026.</p>
 
     <h2>Your account</h2>
     <p>You can sign in with your email, with Apple, or with Google. We store the email address on your account and the sign-in identifier Apple or Google gives us. We never receive your Apple or Google password.</p>
+    <p>We store the display name you choose. People in your races see that name. We also store the time zone with your profile, so your steps count on your local day.</p>
+
+    <h2>Push notifications</h2>
+    <p>On iPhone, if you allow notifications, we store the push token Apple assigns to this install of Stride League. A push token is the address Apple Push Notification service uses to deliver a notification to the app. We keep it so we can send you notifications about your races. We delete it when you delete your account.</p>
 
     <h2>Steps</h2>
     <p>On iPhone, Stride League reads steps from Apple Health. On Android, it reads steps from Health Connect. We use those steps only to show your own totals and race standings.</p>
@@ -50,7 +55,7 @@
     <p>Your source label is shared with the race and shows on the standings. Your phone model is visible only to you and the Stride League team, and we use it only for fair-play checks. Other people in your races can’t see it.</p>
     <p>Stride League doesn’t connect to your accounts with other fitness companies. It reads only what you allow through Apple Health or Health Connect. We don’t read heart rate, sleep, location, workouts, or any other health data, and we never write anything to Apple Health or Health Connect.</p>
     <p>We don’t sell your information. We don’t use steps or other Health data for advertising.</p>
-    <p>We don’t share Health data with third parties beyond our backend (Supabase) and subscription processing (Apple, Google, and RevenueCat).</p>
+    <p>Step data goes only to our backend (Supabase). We don’t share it with other companies.</p>
 
     <h2>Turning off Health access</h2>
     <p>You can stop Stride League from reading steps at any time. The app still opens, and your totals stay empty instead of showing zero.</p>
@@ -65,20 +70,31 @@
     <p>If a day has more than 60,000 steps, the person who created that race sees a fair-play flag for that day. Other people in the race don’t see it. A high day isn’t an automatic ban or removal from a race. A single sync of more than 200,000 steps for one day is rejected.</p>
 
     <h2>Races</h2>
-    <p>A race holds up to 5 people on the free tier, or up to 100 with Stride League Plus. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
+    <p>A race holds up to 5 people. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
 
     <h2>Home-screen widget (Android)</h2>
     <p>On Android, the home-screen widget shows your steps today and your standing in an active race. To do that, the app keeps a small snapshot in Android shared preferences on your phone. The snapshot is not uploaded for the widget.</p>
     <p>Signing out or deleting your account clears the snapshot. Removing the widget from your home screen does not clear it.</p>
 
+    <h2>Crash reports</h2>
+    <p>We use Sentry for crash and diagnostic reports. A report includes device and operating-system information. It does not include your step data. We use these reports to find and fix problems in the app.</p>
+
     <h2>Reports and blocks</h2>
     <p>You can report or block another person in the app. We store the report so we can review it. A block keeps that person out of your races.</p>
 
     <h2>Stride League Plus</h2>
-    <p>Plus is $3.99 a month and renews automatically until you cancel. Cancel in your Apple ID settings. Apple, Google, and RevenueCat process the subscription. We learn whether Plus is active. We don’t receive your full payment card number.</p>
+    <p>The first release is free to use. A race holds up to 5 people, and the app doesn’t show ads. Plus isn’t offered in this release, so we don’t collect payment or subscription information.</p>
 
     <h2>Deleting your account</h2>
-    <p>You can delete your account in the app. We then delete the account data we store, including your profile and your personal day-by-day step totals. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
+    <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, and your personal day-by-day step totals. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
+
+    <h2>Who handles your data</h2>
+    <ul>
+      <li>Supabase hosts our backend. Your account, display name, time zone, push token, and step data are stored there.</li>
+      <li>Apple provides sign-in and push notification delivery.</li>
+      <li>Google provides sign-in.</li>
+      <li>Sentry receives crash and diagnostic reports, including device and operating-system information. Those reports do not include step data.</li>
+    </ul>
 
     <h2>This website</h2>
     <p>strideleague.me doesn’t use tracking cookies or third-party analytics.</p>

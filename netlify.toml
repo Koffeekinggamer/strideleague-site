@@ -34,9 +34,15 @@
   to = "/404.html"
   status = 200
 
-# Help page. The app links to /help/step-sources (no trailing slash).
-# The page lives at help/step-sources/index.html. Static files win over
-# this rule, so it only matters if Netlify does not resolve the folder.
+# Help pages live in folders (help/index.html, help/step-sources/index.html).
+# The app links to /help/step-sources with no trailing slash, and the
+# App Store support URL is /help. Static files win over these rules, so
+# they only matter if Netlify does not resolve the folder.
+[[redirects]]
+  from = "/help"
+  to = "/help/index.html"
+  status = 200
+
 [[redirects]]
   from = "/help/step-sources"
   to = "/help/step-sources/index.html"

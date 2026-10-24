@@ -33,7 +33,7 @@
   <main id="content" class="wrap sheet prose">
     <h1>Privacy</h1>
     <p>Stride League is a race on steps for a few friends. This page says what we collect, why we collect it, and who else handles it.</p>
-    <p>Last updated October 21, 2026.</p>
+    <p>Effective date: October 24, 2026.</p>
 
     <h2>Your account</h2>
     <p>You can sign in with your email, with Apple, or with Google. We store the email address on your account and the sign-in identifier Apple or Google gives us. We never receive your Apple or Google password.</p>
@@ -56,6 +56,7 @@
     <p>Stride League doesn’t connect to your accounts with other fitness companies. It reads only what you allow through Apple Health or Health Connect. We don’t read heart rate, sleep, location, workouts, or any other health data, and we never write anything to Apple Health or Health Connect.</p>
     <p>We don’t sell your information. We don’t use steps or other Health data for advertising.</p>
     <p>Step data goes only to our backend (Supabase). We don’t share it with other companies.</p>
+    <p>It is not sent to RevenueCat. RevenueCat receives the app user ID and Plus purchase status only, not step totals and not payment card data.</p>
 
     <h2>Turning off Health access</h2>
     <p>You can stop Stride League from reading steps at any time. The app still opens, and your totals stay empty instead of showing zero.</p>
@@ -70,7 +71,7 @@
     <p>If a day has more than 60,000 steps, the person who created that race sees a fair-play flag for that day. Other people in the race don’t see it. A high day isn’t an automatic ban or removal from a race. A single sync of more than 200,000 steps for one day is rejected.</p>
 
     <h2>Races</h2>
-    <p>A race holds up to 5 people. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
+    <p>A race is private and is joined by code. It holds up to 5 people. A race created with Stride League Plus holds up to 20. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
 
     <h2>Home-screen widget (Android)</h2>
     <p>On Android, the home-screen widget shows your steps today and your standing in an active race. To do that, the app keeps a small snapshot in Android shared preferences on your phone. The snapshot is not uploaded for the widget.</p>
@@ -83,16 +84,22 @@
     <p>You can report or block another person in the app. We store the report so we can review it. A block keeps that person out of your races.</p>
 
     <h2>Stride League Plus</h2>
-    <p>The first release is free to use. A race holds up to 5 people, and the app doesn’t show ads. Plus isn’t offered in this release, so we don’t collect payment or subscription information.</p>
+    <p>The app has no ads. It does not collect contacts, photos, precise location, the advertising identifier, a list of your other apps, or SMS. It does not collect payment card data.</p>
+    <p><strong>Stride League Plus.</strong> Optional. Judson Miller sells it on iPhone, in the United States, for <strong>$3.99 per month</strong>, through Apple In-App Purchase. Plus lets you create a race of up to 20 people. Without Plus, a race you create holds up to 5. Joining a race is free. If Plus ends, a race that already has the higher limit keeps it. The people already in it stay, and people can still join until it reaches that limit. A new race holds up to 5.</p>
+    <p>Apple charges your Apple ID. The app does not receive your card number. <strong>RevenueCat</strong> receives the app user ID and the purchase status, which is whether Plus is active, so the app can apply the higher race limit. RevenueCat does not receive payment card data, step totals, your display name, or your email.</p>
 
     <h2>Deleting your account</h2>
     <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, and your personal day-by-day step totals. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
+    <p>The account does not expire. Stride League Plus renews through Apple until you cancel it. Deleting the account does not cancel Plus.</p>
+    <p>Deleting the account does not cancel Stride League Plus. Cancel Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Otherwise Apple keeps charging the Apple ID. A refund goes through Apple.</p>
+    <p>Cancel Stride League Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Deleting the account does not cancel it.</p>
     <p><a href="/delete-account/">Delete your account</a></p>
 
     <h2>Who handles your data</h2>
     <ul>
       <li>Supabase hosts our backend. Your account, display name, time zone, push token, and step data are stored there.</li>
-      <li>Apple provides sign-in and push notification delivery.</li>
+      <li><strong>Apple</strong> — sign-in, Apple Health on the device, push delivery if you allow notifications, and payment for Stride League Plus on iPhone. Handles the sign-in you start. The step total stays on the device until the app reads it. A race notification is not your step history. Apple charges Plus to your Apple ID. The app does not receive your card number.</li>
+      <li><strong>RevenueCat</strong> — purchase status for Stride League Plus. Receives the app user ID and whether Plus is active. Does not receive payment card data, step totals, your display name, or your email.</li>
       <li>Google provides sign-in.</li>
       <li>Sentry receives crash and diagnostic reports, including device and operating-system information. Those reports do not include step data.</li>
     </ul>

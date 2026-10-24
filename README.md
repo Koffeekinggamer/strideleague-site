@@ -93,6 +93,7 @@ That path is listed in the Apple app site association file, so a finished sign-i
 | `privacy.html`, `terms.html` | Privacy policy and terms |
 | `help/index.html` | Help index at `/help/`. Use `https://strideleague.me/help/` as the App Store support URL. |
 | `help/step-sources/index.html` | Step source help. The app’s “How to connect your watch” link and sync-stall fallback open `https://strideleague.me/help/step-sources`. |
+| `delete-account/index.html` | Account deletion at `/delete-account/`. The app’s delete-account link is `https://strideleague.me/delete-account/`. |
 | `404.html`, `fallback.js` | Universal-link fallback |
 | `config.js` | `APP_STORE_URL` and `PLAY_STORE_URL` |
 | `site.css`, `favicon.svg` | Styles and icon |

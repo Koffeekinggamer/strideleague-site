@@ -41,8 +41,9 @@
     <p>We store the display name you choose. People in your races see that name. We also store the time zone with your profile, so your steps count on your local day.</p>
 
     <h2>Push notifications</h2>
-    <p>On iPhone, if you allow notifications, we store the push token Apple assigns to this install of Stride League. A push token is the address Apple Push Notification service uses to deliver a notification to the app. We keep it so we can send you notifications about your races and about a new message. We delete it when you delete your account.</p>
+    <p>On iPhone, if you allow notifications, we store the push token Apple assigns to this install of Stride League. A push token is the address Apple Push Notification service uses to deliver a notification to the app. We keep it so we can send you notifications about your races, a new message, and a weekly recap. We delete it when you delete your account.</p>
     <p>A message notification includes the friend’s display name and the message text. Apple delivers it. It does not include your steps.</p>
+    <p>If you allow notifications, we also send a weekly recap push about your steps for the week. Apple delivers it.</p>
 
     <h2>Steps</h2>
     <p>On iPhone, Stride League reads steps from Apple Health. On Android, it reads steps from Health Connect. We use those steps only to show your own totals and race standings.</p>
@@ -59,6 +60,9 @@
     <p>We don’t sell your information. We don’t use steps or other Health data for advertising.</p>
     <p>Step data goes only to our backend (Supabase). We don’t share it with other companies.</p>
     <p>It is not sent to RevenueCat. RevenueCat receives the app user ID and Plus purchase status only, not step totals and not payment card data.</p>
+
+    <h2>Goal, streaks, and badges</h2>
+    <p>We store your daily step goal, your streaks, and your badges. You set the goal in the app. They are deleted with the account.</p>
 
     <h2>Turning off Health access</h2>
     <p>You can stop Stride League from reading steps at any time. The app still opens, and your totals stay empty instead of showing zero.</p>
@@ -96,7 +100,7 @@
     <p>Apple charges your Apple ID. The app does not receive your card number. <strong>RevenueCat</strong> receives the app user ID and the purchase status, which is whether Plus is active, so the app can apply the higher race limit. RevenueCat does not receive payment card data, step totals, your display name, or your email.</p>
 
     <h2>Deleting your account</h2>
-    <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, your personal day-by-day step totals, your friend connections, your messages, reports, blocks, and the record that you accepted the terms. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
+    <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, your personal day-by-day step totals, your daily step goal, your streaks, your badges, your friend connections, your messages, reports, blocks, and the record that you accepted the terms. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
     <p>The account does not expire. Stride League Plus renews through Apple until you cancel it. Deleting the account does not cancel Plus.</p>
     <p>Deleting the account does not cancel Stride League Plus. Cancel Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Otherwise Apple keeps charging the Apple ID. A refund goes through Apple.</p>
     <p>Cancel Stride League Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Deleting the account does not cancel it.</p>
@@ -104,8 +108,8 @@
 
     <h2>Who handles your data</h2>
     <ul>
-      <li>Supabase hosts our backend. Your account, display name, time zone, push token, step data, friend connections, messages, reports, blocks, and the record that you accepted the terms are stored there.</li>
-      <li><strong>Apple</strong> — sign-in, Apple Health on the device, push delivery if you allow notifications, and payment for Stride League Plus on iPhone. Handles the sign-in you start. The step total stays on the device until the app reads it. A race notification is not your step history. A message notification includes the friend’s display name and the message text, and Apple delivers that notification. Apple charges Plus to your Apple ID. The app does not receive your card number.</li>
+      <li>Supabase hosts our backend. Your account, display name, time zone, push token, step data, daily step goal, streaks, badges, friend connections, messages, reports, blocks, and the record that you accepted the terms are stored there.</li>
+      <li><strong>Apple</strong> — sign-in, Apple Health on the device, push delivery if you allow notifications, and payment for Stride League Plus on iPhone. Handles the sign-in you start. The step total stays on the device until the app reads it. A race notification is not your step history. A message notification includes the friend’s display name and the message text, and Apple delivers that notification. A weekly recap push is about your steps for the week, and Apple delivers that notification. Apple charges Plus to your Apple ID. The app does not receive your card number.</li>
       <li><strong>RevenueCat</strong> — purchase status for Stride League Plus. Receives the app user ID and whether Plus is active. Does not receive payment card data, step totals, your display name, or your email.</li>
       <li>Google provides sign-in.</li>
       <li>Sentry receives crash and diagnostic reports, including device and operating-system information. Those reports do not include step data.</li>

@@ -510,6 +510,19 @@ a.store-badge:hover {
   background: #1b6339;
 }
 
+a.testflight-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a.testflight-link:hover {
+  text-decoration: none;
+}
+
 .copy-status:empty {
   display: none;
 }

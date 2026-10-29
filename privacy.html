@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy · Stride League</title>
-  <meta name="description" content="How Stride League handles your account, steps, step source, notifications, and crash reports.">
+  <meta name="description" content="How Stride League handles your account, steps, friends, messages, notifications, and crash reports.">
   <meta name="theme-color" content="#f3faf6">
   <link rel="canonical" href="https://strideleague.me/privacy.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,16 +33,19 @@
   <main id="content" class="wrap sheet prose">
     <h1>Privacy</h1>
     <p>Stride League is a race on steps for a few friends. This page says what we collect, why we collect it, and who else handles it.</p>
-    <p>Effective date: October 24, 2026.</p>
+    <p>Effective date: [launch day]</p>
+    <p>Last updated: [publish date]</p>
 
     <h2>Your account</h2>
     <p>You can sign in with your email, with Apple, or with Google. We store the email address on your account and the sign-in identifier Apple or Google gives us. We never receive your Apple or Google password.</p>
-    <p>We store the display name you choose. People in your races see that name. We also store the time zone with your profile, so your steps count on your local day.</p>
+    <p>We store the display name you choose. People in your races, your friends, and the people in your chats see that name. The app makes a simple avatar from your initials. We don’t ask for or store a profile photo. We also store the time zone with your profile, so your steps count on your local day.</p>
 
     <h2>Push notifications</h2>
-    <p>On iPhone, if you allow notifications, we store the push token Apple assigns to this install of Stride League. A push token is the address Apple Push Notification service uses to deliver a notification to the app. We keep it so we can send you notifications about your races. We delete it when you delete your account.</p>
+    <p>Notifications are optional. If you allow them, we store the push token Apple (on iPhone) or Google Firebase Cloud Messaging (on Android) assigns to this install of Stride League. A push token is the address the push service uses to deliver a notification to the app. We use it only to send the notifications Stride League offers, such as a new message, a friend request, a cheer, a race update or result, and your Sunday recap. You can turn each type off in the app or turn notifications off in your phone’s Settings. We delete a token when the push service tells us it no longer works, and when you delete your account.</p>
+    <p>A notification’s title and body pass through Apple or Google to reach your phone. By default, a message notification doesn’t show the message text.</p>
 
     <h2>Steps</h2>
+    <p>You can’t type in steps by hand. Steps come only from Apple Health or Health Connect, and steps entered by hand in those apps don’t count.</p>
     <p>On iPhone, Stride League reads steps from Apple Health. On Android, it reads steps from Health Connect. We use those steps only to show your own totals and race standings.</p>
     <p>The only health data we read is your daily step total, from the one step source you choose. On iPhone, that’s iPhone, Apple Watch, or both together. On Android, it’s this phone, or Samsung Health for a Samsung Galaxy Watch. You have one step source at a time. Only steps recorded by the source you choose count.</p>
     <p>To tell sources apart, the app also reads which app or device recorded your steps. It may look at recent step records on your phone to do this, but those records stay on your phone.</p>
@@ -72,16 +75,27 @@
 
     <h2>Races</h2>
     <p>A race is private and is joined by code. It holds up to 5 people. A race created with Stride League Plus holds up to 20. When a race ends, there is a 24-hour window for late step syncs. Only steps inside the race dates count. After that window, the result locks on our servers.</p>
+    <p><strong>Team races.</strong> A race can be split into teams. We store the team names and which team each person is on. Everyone in the race sees the team names, the teams, and the team totals.</p>
+    <p>Race names and team names are visible to everyone in that race and to anyone you share an invite with. They are filtered for objectionable words, and they can be reported.</p>
 
-    <h2>Home-screen widget (Android)</h2>
-    <p>On Android, the home-screen widget shows your steps today and your standing in an active race. To do that, the app keeps a small snapshot in Android shared preferences on your phone. The snapshot is not uploaded for the widget.</p>
-    <p>Signing out or deleting your account clears the snapshot. Removing the widget from your home screen does not clear it.</p>
+    <h2>Cheers, streaks, badges, and the Sunday recap</h2>
+    <p><strong>Cheers.</strong> You can cheer someone in a live race you share. We store who sent the cheer, who received it, the race, and when. The person you cheer sees that you cheered them. There’s a daily limit.</p>
+    <p><strong>Streaks and badges.</strong> We work these out from data we already have, such as the days you synced steps, races you finished, podium places, and cheers. We store the badges you earn and when. Your badges are visible to you, your friends, and people in a race you’re both still in, including a race that has ended. That includes the 7-day and 30-day streak badges. Your current streak count is shown only to you.</p>
+    <p><strong>Sunday recap.</strong> Each week we put together a summary of your own steps and races, such as your average steps per day. We store the recap with your account so you can open it in the app. Only you see it.</p>
 
     <h2>Crash reports</h2>
-    <p>We use Sentry for crash and diagnostic reports. A report includes device and operating-system information. It does not include your step data. We use these reports to find and fix problems in the app.</p>
+    <p>We use Sentry for crash and diagnostic reports. A report includes device and operating-system information, the app version, and an internal account ID so we can connect related errors. It does not include your step data, your messages, your email, or your display name. Sentry keeps reports for about 90 days. We use these reports to find and fix problems in the app.</p>
+
+    <h2>Friends and messages</h2>
+    <p>You can add a friend and send them a one-to-one message. We store the friend connection, the messages, reports, blocks, and the record that you accepted the terms.</p>
+    <p>Only the two people in the chat can see the messages. If one of you reports a message, we review that message.</p>
+    <p>Before you send your first message, you accept the chat rules in the app. Messages are checked against a list of objectionable words when you send them. Some words are masked, and messages with others aren’t sent.</p>
+    <p>Group and race chat messages are visible to everyone in that chat, including people who join later. When you leave a chat, the messages you’ve already sent stay visible to its members.</p>
+    <p>Friend connections, one-to-one messages, blocks, and the record that you accepted the terms are deleted with the account. Reports you filed, and reports that were filed about you, are kept with your identity removed, for safety review.</p>
 
     <h2>Reports and blocks</h2>
-    <p>You can report or block another person in the app. We store the report so we can review it. A block keeps that person out of your races.</p>
+    <p>You can report or block another person in the app. We store the report so we can review it. A block stops one-to-one messages with that person and hides their messages in group and race chats. It also stops them from cheering you.</p>
+    <p>When you file a report, we store who filed it, what was reported (a person, a message, a race, or a team), the reason, and any note you add. We review reports within 24 hours. We may remove content, remove someone from a race or chat, or close an account.</p>
 
     <h2>Stride League Plus</h2>
     <p>The app has no ads. It does not collect contacts, photos, precise location, the advertising identifier, a list of your other apps, or SMS. It does not collect payment card data.</p>
@@ -89,20 +103,28 @@
     <p>Apple charges your Apple ID. The app does not receive your card number. <strong>RevenueCat</strong> receives the app user ID and the purchase status, which is whether Plus is active, so the app can apply the higher race limit. RevenueCat does not receive payment card data, step totals, your display name, or your email.</p>
 
     <h2>Deleting your account</h2>
-    <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, and your personal day-by-day step totals. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
-    <p>The account does not expire. Stride League Plus renews through Apple until you cancel it. Deleting the account does not cancel Plus.</p>
-    <p>Deleting the account does not cancel Stride League Plus. Cancel Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Otherwise Apple keeps charging the Apple ID. A refund goes through Apple.</p>
-    <p>Cancel Stride League Plus on the iPhone in <strong>Settings</strong>, under your name, then <strong>Subscriptions</strong>. Deleting the account does not cancel it.</p>
+    <p>You can delete your account in the app. We then delete the account data we store, including your profile, your push token, your badges, streaks, cheers, and recaps, your personal day-by-day step totals, your friend connections, your one-to-one messages, blocks, and the record that you accepted the terms. Reports you filed, and reports that were filed about you, are kept with your identity removed, for safety review. Messages you’ve already sent in a group or race chat stay visible to its members. You come off races that haven’t locked yet, including a race still in its 24-hour window. On a race that has already locked, the step totals already counted stay so the result doesn’t change, your name is removed, and the board shows <strong>Former member</strong>.</p>
+    <p>The account does not expire.</p>
+    <p>Deleting your account doesn’t cancel Stride League Plus. To cancel, open iPhone Settings, tap your name, then Subscriptions. A refund goes through Apple.</p>
     <p><a href="/delete-account/">Delete your account</a></p>
 
     <h2>Who handles your data</h2>
     <ul>
-      <li>Supabase hosts our backend. Your account, display name, time zone, push token, and step data are stored there.</li>
+      <li>Supabase hosts our backend in the United States. Your account, display name, time zone, push token, step data, friend connections, messages, cheers, badges, streaks, recaps, team names, reports, blocks, and the record that you accepted the terms are stored there.</li>
       <li><strong>Apple</strong> — sign-in, Apple Health on the device, push delivery if you allow notifications, and payment for Stride League Plus on iPhone. Handles the sign-in you start. The step total stays on the device until the app reads it. A race notification is not your step history. Apple charges Plus to your Apple ID. The app does not receive your card number.</li>
       <li><strong>RevenueCat</strong> — purchase status for Stride League Plus. Receives the app user ID and whether Plus is active. Does not receive payment card data, step totals, your display name, or your email.</li>
-      <li>Google provides sign-in.</li>
+      <li>Google provides sign-in, and on Android, push delivery through Firebase Cloud Messaging if you allow notifications.</li>
       <li>Sentry receives crash and diagnostic reports, including device and operating-system information. Those reports do not include step data.</li>
     </ul>
+
+    <h2>Children</h2>
+    <p>You must be at least 13 to use Stride League. If you’re under 18, a parent or guardian must agree to these terms for you. Stride League isn’t made for children under 13, and we don’t knowingly collect information from them. If you think a child under 13 has an account, email us and we’ll delete it.</p>
+
+    <h2>Where your data is stored</h2>
+    <p>Our backend runs in the United States. If you use Stride League from somewhere else, your information is moved to and stored in the United States.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we’ll update the date at the top. If a change is significant, we’ll tell you in the app before it applies.</p>
 
     <h2>This website</h2>
     <p>strideleague.me doesn’t use tracking cookies or third-party analytics.</p>

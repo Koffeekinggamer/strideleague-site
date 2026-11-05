@@ -37,7 +37,7 @@ Do not redirect the apex to `www`, or the reverse. Apple rejects a redirect in f
 - `/j/*`
 - `/race/*`
 
-Any other missing path still uses `404.html` as Netlify’s 404 page. The script on that page reads the original path. Join links show the code in large type with a Copy button. Race links (`/race/<id>`, from the Android widget and race deep links) show **Open this race in Stride League** with both an App Store line and a Google Play line, whatever the device; each says the listing is coming soon until its URL is set in `config.js`. The page does not try a custom URL scheme. An empty store URL in `config.js` shows Coming soon.
+Any other missing path still uses `404.html` as Netlify’s 404 page. The script on that page reads the original path. Join links show the code in large type with a Copy button. Race links (`/race/<id>`, from race deep links) show **Open this race in Stride League** with both an App Store line and a Google Play line, whatever the device; each says the listing is coming soon until its URL is set in `config.js`. The page does not try a custom URL scheme. An empty store URL in `config.js` shows Coming soon.
 
 ## Association files
 
@@ -73,7 +73,7 @@ In the iOS app, the associated domains entitlement should include `applinks:stri
 - `/auth/callback` — sign-in return
 - `/join/<code>` and `/j/<code>` — invites
 - `/i/<code>` — older invite shape the app still accepts
-- `/race/<id>` — a race (Android widget tap and race deep links)
+- `/race/<id>` — a race deep link
 
 On Android, the app has a separate verified `https` intent filter on `strideleague.me` for each of `/join`, `/i`, `/auth`, and `/race`. `assetlinks.json` has no path list. It covers every path on the domain, so `/race/*` needs no change there once the real certificate fingerprint replaces `SHA256_PLACEHOLDER`.
 

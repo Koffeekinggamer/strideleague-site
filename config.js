@@ -8,7 +8,7 @@ var APP_STORE_URL = "https://apps.apple.com/app/id6819097146";
 /* The App Store page 404s until the app is released.
    Keep this false until then so pages show "Coming soon" instead of a dead link.
    Flip to true on release day. */
-var APP_STORE_RELEASED = false;
+var APP_STORE_RELEASED = true;
 var PLAY_STORE_URL = "";
 
 function strideStoreUrl(kind) {
